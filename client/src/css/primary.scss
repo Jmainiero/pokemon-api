@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Poppins:wght@400;500;700&display=swap');
+
+html {
+    padding: 0;
+    margin: 0;
+    background: rgb(247, 246, 220);
+    background: linear-gradient(180deg, rgba(247, 246, 220, 1) 0%, rgba(177, 215, 180, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav {
+    & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5%;
+        margin: 2% 0 0 2%;
+    }
+}
+
+.silhouette {
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    font-size: 8rem;
+    opacity: 0.02;
+    text-transform: uppercase;
+    font-family: 'Fuzzy Bubbles',
+    cursive;
+    font-weight: 700;
+    transform: rotate(45deg);
+}
+
+.float-container {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    width: 80vw;
+
+}
+
+.float-child {
+    flex: 1;
+    height: 500px;
+
+    &:not(:last-child) {
+        margin-right: 3rem;
+    }
+}
+
+.pokemon-img {
+    & img {
+        object-fit: contain;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%
+    }
+}
+
+.primary-form {
+    & h1 {
+        font-size: 6rem;
+        // text-shadow: 6px 6px #D3D3D3;
+        text-shadow: 6px 6px rgba(255, 192, 144);
+        color: #7FB77E;
+    }
+
+    & .custom-search {
+        position: relative;
+        width: 40rem;
+
+    }
+    & input,
+    & button {
+        font-family: inherit;
+        border: none;
+        outline: none;
+        transition: all 0.5s;
+    }
+
+    & input {
+        border-radius: 50px;
+        padding: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    & button {
+        position: absolute;
+        right: 0;
+        border: 0;
+        outline: none;
+        margin: 0;
+        z-index: 2;
+        background: #7FB77E;
+        color: #fff;
+        padding: 2rem;
+        border-radius: 0 50px 50px 0;
+
+        &:hover {
+            background: #FFC090;
+        }
+    }
+
+    & input {
+        transition: 0.5s ease all;
+
+        &:active,
+        &:focus {
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+        }
+    }
+}
