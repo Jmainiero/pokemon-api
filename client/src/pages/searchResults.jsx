@@ -1,11 +1,16 @@
 import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { DisplayResults } from '../components/displayResults'
 export const SearchResults = () => {
-    const selector = useSelector(state => state.pokemon.pokemon);
-    console.log(selector)
+    const pokemon = useSelector(state => state.pokemon.pokemon);
+    console.log(pokemon)
+    useEffect(() => {
+     if(pokemon.length === 0) window.location = "/";
+    }, [])
     window.document.title = "Search Results | John Mainiero"
     return(
         <div className="container">
-            <h1>Search Results</h1>
+        {pokemon.length != 0 ? <DisplayResults/> : null}
         </div>
     );
 }

@@ -1,0 +1,45 @@
+.display-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 35vw;
+    height: 50vh;
+    border-radius: 50px;
+    background-color: #ffcb05;
+    opacity: 0.8;
+    background-size: 10px 10px;
+    background-image: repeating-linear-gradient(45deg, #c7a008 0, #444cf7 1px, #ffcb05 0, #ffcb05 50%);
+    overflow: hidden;
+
+    &_header {
+    height: 5rem;
+    text-align: center;
+
+    & h1 {
+        color: #000;
+        text-shadow: 6px 6px rgb(53, 53, 53);
+        font-size: 5rem;
+        padding: 1rem;
+     }
+    }
+
+    &_body {
+        background: #fff;
+        padding: 2rem;
+        height: 100%;
+        border-radius: 50px 50px 0 0;
+        & .table-key{
+            font-weight: 700;
+         }
+     }
+
+     & .display-specifics {
+         &_category {
+             font-weight: 700;
+             font-size: 2rem;
+             padding-bottom: 2rem;
+         }
+     }
+}

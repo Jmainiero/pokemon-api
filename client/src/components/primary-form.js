@@ -31,6 +31,7 @@ export const Search = () => {
           query: searchTerm,
         },
       });
+      console.log(res);
       if (res.status === 200) {
         dispatch(setPokemon(res.data.data));
         setRedirect(true);

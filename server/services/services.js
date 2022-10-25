@@ -2,14 +2,19 @@ const axios = require("axios");
 const { baseURL } = require("../utils/utils");
 const queryPokemon = async (searchTerm) => {
   try {
-    const r = await axios.get(baseURL + "/pokemon/" + searchTerm);
+    const r = await axios.get(baseURL + "pokemon/" + searchTerm);
     const about = {
       name: r.data.name,
       id: r.data.id,
-      weight: r.data.weight,
-      height: r.data.height,
+      weight: `${r.data.weight / 10} kg`,
+      height: `${r.data.height / 10} m`,
     };
+    console.log(r.data.abilities);
     const stats = r.data.stats;
+    const images = r.data.sprites.front_default;
+    const abilities = r.data.abilities.map((e) => {
+      return e.ability.name;
+    });
     const moves = r.data.moves.map((e) => {
       const moveName = e.move.name
         .replaceAll("-", " ")
@@ -24,10 +29,16 @@ const queryPokemon = async (searchTerm) => {
         learnedMethod: e.version_group_details[0].move_learn_method.name,
       };
     });
-    return { about: about, stats: stats, moves: moves };
+    return {
+      about: about,
+      stats: stats,
+      moves: moves,
+      img: images,
+      abilities: abilities,
+    };
   } catch (e) {
     console.log(e);
-    return new Error(e);
+    throw new Error(e);
   }
 };
 
