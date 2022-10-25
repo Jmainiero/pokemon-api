@@ -5,6 +5,20 @@ export const DisplayResults = () => {
     return(
         <div className="display-content">
             <div className="display-content_header">
+                <div className="display-content_types">
+        {
+                              pokemon.types.map((key,index) => {
+                                  key = key.replaceAll('-', ' ').split(' ').map(i => {
+                                            return i.charAt(0).toUpperCase() + i.substring(1)
+                                        }).join(" ");
+                                  return <span>{key}</span>;
+                                })
+
+                            }
+                </div>
+                <div className="display-content_pokeid">
+                    <span>#{pokemon.about.id}</span>
+                </div>
             <h1>{pokemon.about.name.charAt(0).toUpperCase() + pokemon.about.name.substring(1)}</h1>
             </div>
                 <div className="display-content_body display-specifics">
@@ -30,7 +44,6 @@ export const DisplayResults = () => {
                                   key = key.replaceAll('-', ' ').split(' ').map(i => {
                                             return i.charAt(0).toUpperCase() + i.substring(1)
                                         }).join(" ");
-                                  console.log(pokemon.abilities.length)
                                   if(index !== pokemon.abilities.length -1) key += ', ';
                                   return key;
                                 })
