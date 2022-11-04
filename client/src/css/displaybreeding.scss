@@ -1,0 +1,11 @@
+.breeding-statusbars {
+
+    & .gender-progress_container{
+        display:flex;
+        justify-content: space-between;
+    }
+}
+
+.gender-progress_key{
+        width: 25%;
+}

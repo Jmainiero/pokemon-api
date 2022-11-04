@@ -3,16 +3,12 @@ import { DisplayGender} from './DisplayGender'
 export const DisplayBreeding = () => {
     const pokemon = useSelector(state => state.pokemon.pokemon)
      return (
-        <table>
-            <tbody>
-                  <tr><td className="display-specifics_category--secondary">Breeding</td></tr>
-                    <tr>
-                        <td className="table-key">Gender</td>
-                        <td className="table-data">{<DisplayGender props={{pokemon}}/>}</td>
-                    </tr>
-                    <tr>
-                        <td className="table-key">Egg Groups</td>
-                        <td className="table-data">
+        <div className="display-specifics__breeding">
+                  <span className="display-specifics_category--secondary">Breeding</span>
+                    {<DisplayGender props={{pokemon}}/>}
+                    <div>
+                        <span className="table-key">Egg Groups</span>
+                        <div className="table-data">
                                 {
                                     pokemon.eggGroups.map((key,index) => {
                                         key = key.replaceAll('-', ' ').split(' ').map(i => {
@@ -23,10 +19,9 @@ export const DisplayBreeding = () => {
                                     })
                                 }
 
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
+                        </div>
+                    </div>
+        </div>
 
     )
 

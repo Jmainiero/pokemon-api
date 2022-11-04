@@ -1,5 +1,5 @@
 export const DisplayGender = (props) => {
-  const completed = props.props.pokemon.gender.female;
+  let completed = '';
   const bgcolor = '#FF77DD';
 
   const containerStyles = {
@@ -21,11 +21,24 @@ export const DisplayGender = (props) => {
     color: 'black'
   }
 
-  return (
-    <div style={containerStyles}>
-      <div style={fillerStyles}>
-        <span style={labelStyles}>{`${completed}%`}</span>
-      </div>
-    </div>
-  );
+    const display = Object.keys(props.props.pokemon.gender).map((e,index) => {
+            completed = props.props.pokemon.gender[e] || 50;
+        return(
+            <div className="gender-progress_container" key={e}>
+                <div className="gender-progress_key">
+                    <span className="gender-progress_label">{e.charAt(0).toUpperCase() + e.substring(1)}</span>
+                </div>
+                    <div style={fillerStyles}>
+                        <span style={labelStyles}>{`${completed}%`}</span>
+                    </div>
+            </div>
+        )
+    })
+
+
+    return(
+        <div className="breeding-statusbars">
+            {display}
+        </div>
+    )
 }
