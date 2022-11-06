@@ -3,9 +3,19 @@
     & .gender-progress_container{
         display:flex;
         justify-content: space-between;
+        margin-bottom: 0.3rem;
     }
 }
 
 .gender-progress_key{
         width: 25%;
+}
+.gender-progress_bar {
+    width: 100%;
+
+    & > div {
+        border-radius: 50px;
+        text-align: center;
+        padding: 3px;
+    }
 }

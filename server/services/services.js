@@ -66,7 +66,6 @@ const querySpecies = async (url) => {
         //Gender percentages are out broken in to 8 parts : 100 /8 = 12.5, gender_rate is the number of parts to make a pokemon female.
         female: r.data.gender_rate * 12.5,
         male: 100 - r.data.gender_rate * 12.5,
-        genderless: r.data.gender_rate === -1 ? true : false,
       },
       eggGroups: r.data.egg_groups.map((e) => {
         return e.name.charAt(0).toUpperCase() + e.name.substring(1);
