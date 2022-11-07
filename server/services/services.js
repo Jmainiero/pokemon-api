@@ -5,14 +5,13 @@ const queryPokemon = async (searchTerm) => {
     const r = await axios.get(baseURL + "pokemon/" + searchTerm);
     const speciesInfo = await querySpecies(r.data.species.url); //Returns Gender Percentages & Species information
     const about = {
-      name: r.data.name,
       weight: `${r.data.weight / 10} kg`,
       height: `${r.data.height / 10} m`,
       species: speciesInfo.species,
     };
     const stats = r.data.stats;
     //Default Sprites
-    const images = r.data.sprites.front_default;
+    const images = r.data.sprites.other.home.front_default;
     const types = r.data.types.map((e) => {
       return e.type.name;
     });
@@ -35,6 +34,7 @@ const queryPokemon = async (searchTerm) => {
       };
     });
     return {
+      name: r.data.name,
       about: about,
       id: r.data.id,
       stats: stats,
@@ -64,8 +64,9 @@ const querySpecies = async (url) => {
         .genus.replace("Pokémon", ""),
       gender: {
         //Gender percentages are out broken in to 8 parts : 100 /8 = 12.5, gender_rate is the number of parts to make a pokemon female.
-        female: r.data.gender_rate * 12.5,
-        male: 100 - r.data.gender_rate * 12.5,
+        female: r.data.gender_rate !== -1 ? r.data.gender_rate * 12.5 : 0,
+        male: r.data.gender_rate !== -1 ? 100 - r.data.gender_rate * 12.5 : 0,
+        genderless: r.data.gender_rate === -1 ? true : false,
       },
       eggGroups: r.data.egg_groups.map((e) => {
         return e.name.charAt(0).toUpperCase() + e.name.substring(1);
