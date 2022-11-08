@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { DisplayResults } from '../components/displayResults'
+import { DisplayResults } from '../components/pages/searchResults/displayResults'
 export const SearchResults = () => {
     const pokemon = useSelector(state => state.pokemon.pokemon);
     console.log(pokemon)

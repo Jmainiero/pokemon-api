@@ -1,7 +1,7 @@
 import React from 'react';
-import { Nav } from '../components/nav';
-import { Search } from '../components/primary-form';
-import { Pikachu } from '../components/pikachu';
+import { Nav } from '../components/pages/home/nav';
+import { Search } from '../components/pages/home/primary-form';
+import { Pikachu } from '../components/pages/home/pikachu';
 
 
 export const Home = () => {

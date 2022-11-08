@@ -1,4 +1,4 @@
-import Logo from "../assets/pokemon-logo.png";
+import Logo from "../../../assets/pokemon-logo.png";
 export const Nav = () => {
   return (
     <div className="nav">

@@ -1,4 +1,4 @@
-import PikachuImg from "../assets/pikachu_one.png";
+import PikachuImg from "../../../assets/pikachu_one.png";
 
 export const Pikachu = () => {
   return (

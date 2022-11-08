@@ -1,17 +1,14 @@
-import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { DisplayAbout } from './displayAbilities'
 import { DisplayBreeding } from './displayBreeding'
-import { typingColors } from '../css/typingColors'
-const pokemonBackground = require('../assets/pokemon-background.png')
+import { typingColors } from '../../../css/typingColors'
 
 export const DisplayResults = () => {
     const pokemon = useSelector(state => state.pokemon.pokemon)
-    console.log(typingColors[pokemon.types[0]])
+
     const containerStyles = {
         background: `linear-gradient(#${typingColors[pokemon.types[0]]}, #fff 100%)`
     }
-    console.log(containerStyles)
     return(
         <div className="display-content">
             <div className="display-content_header" style={{ background: `${containerStyles.background}` }}>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setPokemon } from "../redux/actions/pokemonActions";
+import { setPokemon } from "../../../redux/actions/pokemonActions";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
