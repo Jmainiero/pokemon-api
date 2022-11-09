@@ -4,9 +4,8 @@ export const DisplayBreeding = () => {
     const pokemon = useSelector(state => state.pokemon.pokemon)
      return (
         <div className="display-specifics__breeding">
-                  <div className="display-specifics_category--secondary">Breeding</div>
                     {<DisplayGender props={{pokemon}}/>}
-                    <div className="">
+                    <div className="display-specifics__breeding-eggGroups flex-content">
                         <span className="table-key">Egg Groups</span>
                         <div className="table-data">
                                 {

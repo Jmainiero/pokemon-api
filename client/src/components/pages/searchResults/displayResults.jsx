@@ -15,6 +15,11 @@ export const DisplayResults = () => {
             id: 2,
             heading: 'Stats',
             content: heading => <h1>Hello World</h1>
+        },
+        {
+            id: 3,
+            heading: 'Moves',
+            content: heading => <h1>Moves</h1>
         }
     ]
 
@@ -51,9 +56,9 @@ export const DisplayResults = () => {
 
                 <div className="display-content_sprite">
                     <img src={pokemon.img} alt="poke-home-default-sprite"/>
+                    <h1>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.substring(1)}</h1>
                 </div>
 
-                <h1>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.substring(1)}</h1>
             </div>
                 <div className="display-content_body display-specifics">
                     <div className="display-content_body__tabs">
