@@ -20,6 +20,11 @@ export const DisplayResults = () => {
             id: 3,
             heading: 'Moves',
             content: heading => <h1>Moves</h1>
+        },
+        {
+            id: 4,
+            heading: "Evolution",
+            content: heading => <h1>Evolution Chain</h1>
         }
     ]
 
