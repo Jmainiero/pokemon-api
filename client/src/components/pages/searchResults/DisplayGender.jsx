@@ -8,11 +8,11 @@ export const DisplayGender = (props) => {
 
         if(e !== 'genderless'){
             return(
-                <div className="gender-progress_container" key={e}>
-                    <div className="gender-progress_key table-key">
+                <div className="gender-progress_container statusbars" key={e}>
+                    <div className="gender-progress_key table-key statusbar_key">
                         <span className="gender-progress_label">{e.charAt(0).toUpperCase() + e.substring(1)}</span>
                  </div>
-                <div className="gender-progress_bar" style={{ }}>
+                <div className="gender-progress_bar statusbar_bar" style={{ }}>
                     <div style={{width:`${completed}%`, backgroundColor: bgcolor}}>
                         <span >{`${props.props.pokemon.gender[e]}%`}</span>
                     </div>
@@ -24,11 +24,11 @@ export const DisplayGender = (props) => {
                 return;
             } else {
                 return(
-                <div className="gender-progress_container" key={e}>
-                    <div className="gender-progress_key">
+                <div className="gender-progress_container statusbars" key={e}>
+                    <div className="gender-progress_key table-key statusbar_key">
                         <span className="gender-progress_label">{e.charAt(0).toUpperCase() + e.substring(1)}</span>
                 </div>
-                 <div className="gender-progress_bar">
+                 <div className="gender-progress_bar statusbar_bar">
                         <span >Species Unknown</span>
                 </div>
             </div>

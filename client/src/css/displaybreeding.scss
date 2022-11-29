@@ -1,19 +1,17 @@
-.breeding-statusbars {
-
-    & .gender-progress_container{
-        display:flex;
+.statusbars {
+        display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
-    }
 }
 
-.gender-progress_key{
-        width: 25%;
+.statusbar_key {
+    width: 25%;
 }
-.gender-progress_bar {
+
+.statusbar_bar {
     width: 100%;
 
-    & > div {
+    &>div {
         border-radius: 50px;
         text-align: center;
         padding: 3px;

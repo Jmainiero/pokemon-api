@@ -1,0 +1,14 @@
+.moves {
+    & table {
+    margin: 0 auto;
+    table-layout : fixed;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px;
+
+    & tr {
+        border: 1px solid #000;
+    }
+    }
+}

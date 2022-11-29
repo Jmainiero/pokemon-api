@@ -16,5 +16,11 @@ export const typingColors = {
     dragon:"6F35FC",
     dark:"705746",
     steel:"B7B7CE",
-    fairy:"D685AD"
+    fairy:"D685AD",
+    HP: "FF5959",
+    Attack: "F5AC78",
+    Defense: "FAE078",
+    "Special Attack": "9DB7F5",
+    "Special Defense": "A7DB8D",
+    Speed: "FA92B2"
 }
